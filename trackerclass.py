@@ -109,7 +109,7 @@ class tracker_in_video:
                     
         return
 
-    #DEFINED TEMPLATE AND OBSERVATION REGION WITH SELECTION BOX 
+    #DEFINE TEMPLATE AND OBSERVATION REGION WITH SELECTION BOX 
     def initialConditionsSelecBox(self, n0):       
         self.setTemplate(n0)
         boolean = False
@@ -128,13 +128,13 @@ class tracker_in_video:
         self.video.set(1, duration[0])
         
         #INITIAL CONDITIONS
-        h_t, w_t = self.templateWidth[1], self.templateWidth[0]              #width and high of template     
-        h_v, w_v = self.observationWidth[1], self.observationWidth[0]     #width and high of observation area
+        h_t, w_t = self.templateWidth[1], self.templateWidth[0]              #width and heigh of template     
+        h_v, w_v = self.observationWidth[1], self.observationWidth[0]     #width and heigh of observation area
         d_h, d_w = h_v-h_t, w_v-w_t
         x,y = self.templateCenter[0], self.templateCenter[1]
         max_loc= [int(w_v/2), int(h_v/2)]
                 
-        n=0                   #starts a frame counter of not match 
+        n=0                   #starts a frame counter of not match frames
         c=duration[0]                  #starts a frame counter                            
         
         x = self.templateCenter[0]
