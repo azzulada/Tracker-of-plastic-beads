@@ -12,7 +12,7 @@ from skimage.feature import peak_local_max
 
 
 
-#define a function who gives the nearlyest maximun 
+#define a function that gives the nearlyest maximun 
 def nearMax(maximuns, oldMax):
     a=[np.linalg.norm(maximuns[i] - oldMax) for i in range(len(maximuns))]
     i=np.argmin(a)
