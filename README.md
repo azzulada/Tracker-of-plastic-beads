@@ -5,8 +5,6 @@ Welcome to the tracker program optimize to compute trayectories of white plastic
 
 It is necessary to install the library cv2 
 
-$ pip install pip install opencv-python
-
 The program initialize runnig in python (could be spyder or directly from the terminal).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
