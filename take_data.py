@@ -9,10 +9,8 @@ from trackerclass import tracker_in_video
 import matplotlib.pyplot as plt
 import numpy as np
 #%%
-path = "path"
-file = "video_file"
-video = path + file + ".avi"
-track = tracker_in_video(video)
+video_file ="video.avi"
+track = tracker_in_video(video_file)
 fps = track.fps                  #frame rate
 #%%
 #TRACKER DURATION
