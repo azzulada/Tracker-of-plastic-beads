@@ -1,5 +1,5 @@
 
-Welcome to the tracker program optimize to compute trayectories of white plastic beads with a dark background.
+Welcome to the tracker program optimized to compute trayectories of white plastic beads with a dark background.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
