@@ -226,7 +226,7 @@ class tracker_in_video:
                     break
                 
             else: 
-                print("The video has ended")
+                print("The video is ended")
                 break
         
                                     
