@@ -1,7 +1,7 @@
 
 Welcome to the tracker program optimized to compute trayectories of white plastic beads with a dark background.
 
------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
 
 Before starting, ensure that the following libraries are installed on your operating
 system: ‘numpy’, ‘matplotlib’, ‘openCv’ and ‘scikit-image’. These libraries are necessary
@@ -18,6 +18,7 @@ with the following steps
 **4. Track the particle:** After defining the template, the script will start tracking the particle automatically in the window. The particle's position will be marked with a red rectangle, while the ROI will be marked with a cyan rectangle. If the particle is too close to another one, you can adjust the size of the ROI to make it easier for the tracker to follow the objective.
 
 **5. Review of the tracking results:** Once the tracking is complete, a graph of the trajectory will be plotted automatically. The tracking results will be saved in the 'xcorr' and 'ycorr' variables, which contain the x and y coordinates of the particle at each time step. 
-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 In case of any query write to azulmariabrigante@gmail.com, gabrielvolonnino@gmail.com, Cori.revora@hotmail.com 
