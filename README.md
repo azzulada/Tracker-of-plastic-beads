@@ -17,7 +17,7 @@ with the following steps
 
 **4. _Track the particle:_** After defining the template, the script will start tracking the particle automatically in the window. The particle's position will be marked with a red rectangle, while the ROI will be marked with a cyan rectangle. If the particle is too close to another one, you can adjust the size of the ROI to make it easier for the tracker to follow the objective.
 
-**5. _Review of the tracking results:_** Once the tracking is complete, a graph of the trajectory will be plotted automatically. The tracking results will be saved in the 'xcorr' and 'ycorr' variables, which contain the x and y coordinates of the particle at each time step. 
+**5. __Review of the tracking results:__** Once the tracking is complete, a graph of the trajectory will be plotted automatically. The tracking results will be saved in the 'xcorr' and 'ycorr' variables, which contain the x and y coordinates of the particle at each time step. 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 In case of any query write to azulmariabrigante@gmail.com, gabrielvolonnino@gmail.com, Cori.revora@hotmail.com 
