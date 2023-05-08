@@ -8,21 +8,23 @@ Created on Thu Jun 10 15:01:08 2021
 from trackerclass import tracker_in_video
 import matplotlib.pyplot as plt
 import numpy as np
-#%%
-video_file = "video.avi"
-track = tracker_in_video(video_file)
+
+path = "/Users/azulbrigante/Documents/caminata/videos/"
+file = "med28_3p_f180+250_A0.9+0.9"
+videoName = path + file + ".avi"
+track = tracker_in_video(videoName)
 fps = track.fps                  #frame rate
-#%%
+
 #TRACKER DURATION
-initialTime = 8    #seconds
-trackerDuration = 5 #seconds    
+initialTime = 2    #seconds
+trackerDuration = 50 #seconds    
 
 n0, l = int(fps*initialTime), int(fps*trackerDuration)
 duration = [n0, n0+l]  #initial and final frame
 
 #INITIAL IMAGE
 #width  xy of observation area. The default observation area is [40, 40].
-track.observationWidth = [45, 45]
+track.observationWidth = [30, 30]#px
 
 #DEFINE INITIAL TEMPLATE (black) AND OBSERVATION AREA (red) WITH A SELECTION BOX.
 track.initialConditionsSelecBox(n0) 
@@ -32,8 +34,9 @@ timeSleep = 1 #ms
 x_corr, y_corr = track.corr(timeSleep, duration)     
 
 #TRAYECTORY'S GRAPH
-plt.figure(1), plt.clf(), plt.grid(True)
-plt.plot(x_corr, y_corr, ".-",color = "limegreen")
+plt.figure(1, figsize = (4, 4)), plt.clf(), plt.grid(True)
+plt.plot(x_corr[:300], y_corr[:300], ".-",color = "r")
+plt.xlabel('X [px]'), plt.ylabel('Y [px]')
 #%%
 #SAVE DATA
 n=1
