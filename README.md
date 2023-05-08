@@ -8,10 +8,10 @@ system: ‘numpy’, ‘matplotlib’, ‘openCv’ and ‘scikit-image’. Thes
 for the program to run properly. Once this is well done, is possible to execute the tracking
 with the following steps
 
-**1. Specify the video file and initial parameters:** Open the `take_data.py' file and assign the value 
-     of the video file name to the variable `videoName'. Ensure that the video file is in the same folder as the script. Choose the initial time and duration  of the tracker and write them in to the variables with the same name. The height and width of the Region of Interest (ROI) can be settle into the attribute `observationWidth'. Could be convenient make this region smaller when the particle is too close to another one so the tracker don't  mix the objective.
+**1. Specify the video file and initial parameters:** Open the 'take_data.py' file and assign the value 
+     of the video file name to the variable 'videoName'. Ensure that the video file is in the same folder as the script. Choose the initial time and duration  of the tracker and write them in to the variables with the same name. The height and width of the Region of Interest (ROI) can be settle into the attribute 'observationWidth'. Could be convenient make this region smaller when the particle is too close to another one so the tracker don't  mix the objective.
 
-**2. Execute the module:**  Run the 'take data' module on Python by typing `python take\_data.py' in the command prompt or terminal. Make sure that the `trackerclass.py' file is also present in the same folder as the `take data' file.
+**2. Execute the module:**  Run the 'take data' module on Python by typing 'python take\_data.py' in the command prompt or terminal. Make sure that the'trackerclass.py' file is also present in the same folder as the 'take data' file.
 
 **3. Select Template:**  After executing the module, an emergent window will appear. Use the rectangle tool to select the particle you want to track. Press and hold the left mouse button to draw a rectangle around  the particle. Once you have selected the particle, press the 'ENTER' key to define the template. If you want to cancel the selection process, press the 'c' key.
 
