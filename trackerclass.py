@@ -12,7 +12,7 @@ from skimage.feature import peak_local_max
 
 
 
-#define a function that gives the nearlyest maximun 
+#define a function who gives the nearlyest maximun 
 def nearMax(maximuns, oldMax):
     a=[np.linalg.norm(maximuns[i] - oldMax) for i in range(len(maximuns))]
     i=np.argmin(a)
@@ -52,9 +52,9 @@ class tracker_in_video:
         #DEFAULT VALUES
         self.templateCenter = [self.w//2, self.h//2]
         self.initialCenter = [self.w//2, self.h//2]
-        self.templatewidth = [15, 15]
+        self.templateWidth = [15, 15]
         self.observationWidth = [40, 40]
-        self.linewidth = int(np.max([self.w, self.h])//300)  
+        self.lineWidth  = int(np.max([self.w, self.h])//300)  
         self.tamplate = -1
         self.edges = [[0, 0 ], [self.w-1, self.h -1 ]]     
             
@@ -99,17 +99,17 @@ class tracker_in_video:
             self.observationRegion=cv.cvtColor(frame[ downSTemp:upSTemp, leftSObs:rightSTemp], cv.COLOR_BGR2GRAY)
             if boolean==True:
                 cv.imshow("tracker", imag)            
-            print("Template and observation area were defined")
+            print("Template and ROI were defined")
             
             self.initialCenter = self.templateCenter
             
         except:
-            print("Somthing is wrong. Check if template and observation area center an width fits in the frame.")
+            print("Somthing is wrong. Check if ROI's fits in frame.")
             #self.template, self.observationRegion=0, 0
                     
         return
 
-    #DEFINE TEMPLATE AND OBSERVATION REGION WITH SELECTION BOX 
+    #DEFINED TEMPLATE AND OBSERVATION REGION WITH SELECTION BOX 
     def initialConditionsSelecBox(self, n0):       
         self.setTemplate(n0)
         boolean = False
@@ -128,13 +128,13 @@ class tracker_in_video:
         self.video.set(1, duration[0])
         
         #INITIAL CONDITIONS
-        h_t, w_t = self.templateWidth[1], self.templateWidth[0]              #width and heigh of template     
-        h_v, w_v = self.observationWidth[1], self.observationWidth[0]     #width and heigh of observation area
+        h_t, w_t = self.templateWidth[1], self.templateWidth[0]              #width and high of template     
+        h_v, w_v = self.observationWidth[1], self.observationWidth[0]     #width and high of observation area
         d_h, d_w = h_v-h_t, w_v-w_t
         x,y = self.templateCenter[0], self.templateCenter[1]
         max_loc= [int(w_v/2), int(h_v/2)]
                 
-        n=0                   #starts a frame counter of not match frames
+        n=0                   #starts a frame counter of not match 
         c=duration[0]                  #starts a frame counter                            
         
         x = self.templateCenter[0]
@@ -170,7 +170,7 @@ class tracker_in_video:
                     
                     #MATCH TEMPLATE WITH CORRELATION
                     try:
-                        result = cv.matchTemplate(A, self.template, method) #cross correlation method for matched images 
+                        self.convolution = cv.matchTemplate(A, self.template, method) #cross correlation method for matched images 
                         
                     except:
                         #if observation area goes out of limits
@@ -178,19 +178,19 @@ class tracker_in_video:
                         obs= gray[upper_left_b[1]:bottom_right_b[1], upper_left_b[0]:bottom_right_b[0]]                                
                         A=obs.copy()                     
                         
-                        result = cv.matchTemplate(A, self.template, method) #cross correlation method for matched images 
+                        self.convolution = cv.matchTemplate(A, self.template, method) #cross correlation method for matched images 
                     
                     
                     #TAKE CORRELATION MAXIMUNS
                     try:
-                        maximuns=peak_local_max(result, min_distance=5, threshold_rel=0.8)
+                        maximuns=peak_local_max(self.convolution, min_distance=5, threshold_rel=0.8)
                         max_loc=nearMax(maximuns, max_loc)                    
                         
                     except:
                         n=n+1
                         print("frame %s was skiped"%c)
                         if n>5:
-                            print("Too many frames didn't match")
+                            print("Too many frames didn't match!")
                             print("Tracker stoped in frame %s."%c) #see the frame where tracker fails 
                             break   
                                             
@@ -214,8 +214,8 @@ class tracker_in_video:
                     y_vec.append(y)   #y position
                     
                     #GRAPH TEMPLATE AND OBSERVATION AREA
-                    cv.rectangle(img, upper_left, bottom_right, [0,0,0], self.linewidth) 
-                    cv.rectangle(img, upper_left_b, bottom_right_b, [0,0,255], self.linewidth)
+                    cv.rectangle(img, upper_left, bottom_right, [0, 0,255], self.lineWidth) 
+                    cv.rectangle(img, upper_left_b, bottom_right_b, [255, 255, 0], self.lineWidth)
                     
                     cv.imshow("tracker", img)
 
@@ -226,7 +226,7 @@ class tracker_in_video:
                     break
                 
             else: 
-                print("The video is ended")
+                print("video ended")
                 break
         
                                     
