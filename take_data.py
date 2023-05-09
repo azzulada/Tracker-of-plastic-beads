@@ -40,5 +40,3 @@ plt.xlabel('X [px]'), plt.ylabel('Y [px]')
 #SAVE DATA
 n=1
 np.savetxt("trayectory_%s.txt"%n, np.transpose([x_corr, y_corr]), header = "frames %s, center=%s, duration=%s, video=%s"%(len(x_corr), track.initialCenter, duration, file))
-
-
