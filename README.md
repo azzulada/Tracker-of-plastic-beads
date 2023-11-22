@@ -20,6 +20,6 @@ with the following steps:
 **5. Review of the tracking results:** Once the tracking is complete, a graph of the trajectory will be plotted automatically. The tracking results will be saved in the 'xcorr' and 'ycorr' variables, which contain the x and y coordinates of the particle at each time step. 
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-A demostration of the track of a particle is show in the next YouTube link: https://www.youtube.com/watch?v=1ctgU-AjPl0
+A demostration of the track of a particle is show in the following YouTube link: https://www.youtube.com/watch?v=1ctgU-AjPl0
 
 In case of any query write to azulmariabrigante@gmail.com, gabrielvolonnino@gmail.com, Cori.revora@hotmail.com 
